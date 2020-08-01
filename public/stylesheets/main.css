@@ -1,0 +1,21 @@
+.thumbnail {
+	padding: 0;
+}
+
+.thumbnail img {
+	width: 100%;
+}
+
+#delete-form {
+	display: inline;
+}
+
+/* Google Maps */
+#map {
+	height: 400px;
+	width: 100%;
+}
+
+.checked {
+	color: orange;
+}
