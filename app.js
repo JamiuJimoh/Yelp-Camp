@@ -17,7 +17,7 @@ const campgroundRoutes = require('./routes/campgrounds');
 const indexRoutes = require('./routes/index');
 
 mongoose
-	.connect(process.env.DATABASEURL, {
+	.connect('mongodb+srv://Sergio:hyperjay@yelpcamp.lzbrh.mongodb.net/yelp_camp?retryWrites=true&w=majority', {
 		useCreateIndex: true,
 		useNewUrlParser: true,
 		useUnifiedTopology: true
