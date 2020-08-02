@@ -17,6 +17,7 @@ const indexRoutes = require('./routes/index');
 
 mongoose
 	.connect(process.env.DATABASEURL, {
+		useCreateIndex: true,
 		useNewUrlParser: true,
 		useUnifiedTopology: true
 	})
