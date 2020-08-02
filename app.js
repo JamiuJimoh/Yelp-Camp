@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
+const session = require('cookie-session');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const User = require('./models/user');
@@ -39,12 +40,17 @@ app.use(flash());
 app.locals.moment = require('moment');
 // PASSPORT CONFIGURATION
 app.use(
-	require('express-session')({
+	session({
+		cookie: {
+			secure: true,
+			maxAge: 60000
+		},
 		secret: 'Once again Rusty wins cutest dog!',
 		resave: false,
 		saveUninitialized: false
 	})
 );
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
