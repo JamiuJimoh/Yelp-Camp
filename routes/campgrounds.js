@@ -66,6 +66,7 @@ router.post('/:id/like', middleware.isLoggedIn, function(req, res) {
 router.post('/', middleware.isLoggedIn, function(req, res) {
 	// get data from form and add to campgrounds array
 	const name = req.body.name;
+	const price = req.body.price;
 	const image = req.body.image;
 	const desc = req.body.description;
 	const author = {
@@ -83,6 +84,7 @@ router.post('/', middleware.isLoggedIn, function(req, res) {
 		const newCampground = {
 			name: name,
 			image: image,
+			price: price,
 			description: desc,
 			author: author,
 			location: location,
