@@ -15,7 +15,19 @@ const commentRoutes = require('./routes/comments');
 const campgroundRoutes = require('./routes/campgrounds');
 const indexRoutes = require('./routes/index');
 
-mongoose.connect('mongodb://localhost:27017/yelp_camp', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose
+	.connect('mongodb://localhost:27017/yelp_camp', {
+		useNewUrlParser: true,
+		useUnifiedTopology: true
+	})
+	.then(
+		() => {
+			console.log('Database Successfully Connected');
+		},
+		(error) => {
+			console.log(error);
+		}
+	);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
