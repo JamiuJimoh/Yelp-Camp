@@ -16,6 +16,7 @@ const commentRoutes = require('./routes/comments');
 const campgroundRoutes = require('./routes/campgrounds');
 const indexRoutes = require('./routes/index');
 
+// export DATABASEURL=mongodb://localhost:27017/yelp_camp
 mongoose
 	.connect(process.env.DATABASEURL, {
 		useCreateIndex: true,
